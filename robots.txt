@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Sitemap: https://fair.ws-expo.com/sitemap.xml
+
+# 万盛展览 - 专业展览公司
+# 专注LED照明·新能源·电力能源海外展会组展服务
