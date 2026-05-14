@@ -13,12 +13,98 @@
     <meta property="og:url" content="https://fair.ws-expo.com">
     <meta property="og:site_name" content="万盛展览">
     <meta name="twitter:card" content="summary_large_image">
-	<meta name="baidu-site-verification" content="codeva-OBLV6r56Tg" />
+    <meta name="baidu-site-verification" content="codeva-OBLV6r56Tg" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="static/css/style.css">
-<link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="sitemap" type="application/xml" title="Sitemap" href="sitemap.xml">
+
+    <!-- 修复图片溢出：确保手机版图片自适应缩小 -->
+    <style>
+        /* 修复 hero-visual 中的图片在移动端溢出问题 */
+        .hero-visual {
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-visual img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        /* 移动端 hero-grid 堆叠布局，防止图片撑开容器 */
+        @media (max-width: 768px) {
+            .hero-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .hero-visual {
+                order: initial;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .hero-visual img {
+                width: 100%;
+                max-width: 100%;
+                height: auto;
+                border-radius: 12px;
+            }
+
+            /* 确保文字区域也不溢出 */
+            .hero-grid > div:first-child {
+                width: 100%;
+                max-width: 100%;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+
+            .hero h1 {
+                font-size: clamp(1.4rem, 5vw, 2rem);
+                line-height: 1.3;
+            }
+
+            .hero-desc {
+                font-size: 0.9rem;
+            }
+
+            .hero-cta {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .hero-cta .btn-gold,
+            .hero-cta .btn-outline-light {
+                font-size: 0.85rem;
+                padding: 0.6rem 1rem;
+            }
+
+            .hero-stats {
+                flex-wrap: wrap;
+                gap: 0.8rem;
+            }
+        }
+
+        /* 极小屏幕进一步优化 */
+        @media (max-width: 480px) {
+            .hero-visual img {
+                border-radius: 8px;
+            }
+
+            .hero h1 {
+                font-size: 1.25rem;
+            }
+        }
+    </style>
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -49,407 +135,407 @@
 </head>
 <body>
 <nav class="navbar"><div class="container"><a href="/" class="logo-group">
-        <img src="https://www.ws-expo.com/images/defaultpic.gif" alt="万盛展览展览公司logo" class="logo-img">
-        <div class="logo-text-group">
-            <span class="logo-main-text">万盛展览</span>
-            <span class="logo-sub">专业展览公司 · 20年海外组展</span>
-        </div>
-    </a><button class="mobile-toggle" aria-label="菜单"><i class="fas fa-bars"></i></button><ul class="nav-links"><li><a href="lighting.html" class="">照明展会</a></li><li><a href="energy.html" class="">新能源展会</a></li><li><a href="power.html" class="">电力展会</a></li><li><a href="services.html" class="">参展服务</a></li><li class="nav-dropdown">
-                <a href="blog.html" class="">
-                    资讯中心 
-                    <i class="fas fa-chevron-down dropdown-arrow" style="font-size:0.65rem;"></i>
-                </a>
-                <ul class="nav-dropdown-menu"><li><a href="cases.html" class="">成功案例</a></li><li><a href="faq.html" class="">参展百问</a></li></ul></li><li class="nav-dropdown">
-                <a href="about.html" class="">
-                    关于我们 
-                    <i class="fas fa-chevron-down dropdown-arrow" style="font-size:0.65rem;"></i>
-                </a>
-                <ul class="nav-dropdown-menu"><li><a href="about.html" class="">公司介绍</a></li><li><a href="honor.html" class="">荣誉资质</a></li><li><a href="team.html" class="">团队风采</a></li><li><a href="partners.html" class="">合作伙伴</a></li><li><a href="contact.html" class="">联系我们</a></li></ul></li><li>
-        <a href="tel:13420079909" class="contact-btn">
-            <i class="fas fa-phone-alt"></i> 13420079909
-        </a>
-    </li></ul></div></nav>
+    <img src="https://www.ws-expo.com/images/defaultpic.gif" alt="万盛展览展览公司logo" class="logo-img">
+    <div class="logo-text-group">
+        <span class="logo-main-text">万盛展览</span>
+        <span class="logo-sub">专业展览公司 · 20年海外组展</span>
+    </div>
+</a><button class="mobile-toggle" aria-label="菜单"><i class="fas fa-bars"></i></button><ul class="nav-links"><li><a href="lighting.html" class="">照明展会</a></li><li><a href="energy.html" class="">新能源展会</a></li><li><a href="power.html" class="">电力展会</a></li><li><a href="services.html" class="">参展服务</a></li><li class="nav-dropdown">
+    <a href="blog.html" class="">
+        资讯中心
+        <i class="fas fa-chevron-down dropdown-arrow" style="font-size:0.65rem;"></i>
+    </a>
+    <ul class="nav-dropdown-menu"><li><a href="cases.html" class="">成功案例</a></li><li><a href="faq.html" class="">参展百问</a></li></ul></li><li class="nav-dropdown">
+    <a href="about.html" class="">
+        关于我们
+        <i class="fas fa-chevron-down dropdown-arrow" style="font-size:0.65rem;"></i>
+    </a>
+    <ul class="nav-dropdown-menu"><li><a href="about.html" class="">公司介绍</a></li><li><a href="honor.html" class="">荣誉资质</a></li><li><a href="team.html" class="">团队风采</a></li><li><a href="partners.html" class="">合作伙伴</a></li><li><a href="contact.html" class="">联系我们</a></li></ul></li><li>
+    <a href="tel:13420079909" class="contact-btn">
+        <i class="fas fa-phone-alt"></i> 13420079909
+    </a>
+</li></ul></div></nav>
 <main>
-<section class="hero">
-    <div class="container">
-        <div class="hero-grid">
-            <div>
-                <div class="hero-badge"><i class="fas fa-award"></i> 中国海外组展十强单位 · 专业展览公司20年</div>
-                <h1>展览公司 · 全球展会组展专家<br><span class="gradient-text">万盛展览</span> 助您闪耀世界舞台</h1>
-                <p class="hero-desc">万盛展览是行业领先的<strong>展览公司</strong>，专注LED照明、新能源、电力能源三大领域，提供展位申请、展台搭建、展品物流、签证代办、补贴申报等一站式出海服务。作为香港灯饰展、法兰克福照明展、汉诺威工博会等多个顶级展会的中国区总代理，我们已助力10000+企业成功出海。</p>
-                <div class="hero-cta">
-                    <a href="services.html" class="btn-gold"><i class="fas fa-rocket"></i> 立即咨询展位</a>
-                    <a href="tel:13420079909" class="btn-outline-light"><i class="fas fa-phone-alt"></i> 13420079909</a>
-                </div>
-                <div class="hero-stats">
-                    <div><span class="hero-stat-num" data-count="20">0</span><div class="hero-stat-label">年展览公司经验</div></div>
-                    <div><span class="hero-stat-num" data-count="80">0</span><div class="hero-stat-label">覆盖国家地区</div></div>
-                    <div><span class="hero-stat-num" data-count="500">0</span><div class="hero-stat-label">组展展会场次</div></div>
-                    <div><span class="hero-stat-num" data-count="10000">0</span><div class="hero-stat-label">服务企业数量</div></div>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <img src="/images/vanson.jpg" alt="万盛展览-专业展览公司-海外展会现场">
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="trust-bar">
-    <div class="container">
-        <div class="trust-grid">
-            <div class="trust-item"><div class="trust-num">500+</div><div class="trust-label">场/年组展规模</div></div>
-            <div class="trust-item"><div class="trust-num">50亿美元</div><div class="trust-label">累计促成订单</div></div>
-            <div class="trust-item"><div class="trust-num">99%</div><div class="trust-label">签证出签率</div></div>
-            <div class="trust-item"><div class="trust-num">78%</div><div class="trust-label">客户复购率</div></div>
-            <div class="trust-item"><div class="trust-num">70%</div><div class="trust-label">最高补贴比例</div></div>
-        </div>
-    </div>
-</section>
-
-<section class="biz-section">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">核心业务</span>
-            <h2 class="section-title">展览公司全产业链服务覆盖</h2>
-            <p class="section-desc">无论您是照明灯饰、新能源储能，还是电力设备企业，万盛展览作为专业展览公司都能为您匹配全球最适合的展会</p>
-        </div>
-        <div class="biz-grid">
-            <div class="biz-card">
-                <div class="biz-icon"><i class="fas fa-lightbulb"></i></div>
-                <h3>照明/灯饰展会</h3>
-                <p>香港灯饰展、法兰克福照明展、美国LFI、迪拜照明展、尼日利亚照明展官方代理，提供LED照明国外展会报名、灯饰行业出国参展申请等一站式服务。</p>
-                <a href="lighting.html" class="biz-link">查看照明展会 <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="biz-card">
-                <div class="biz-icon"><i class="fas fa-solar-panel"></i></div>
-                <h3>新能源/储能展会</h3>
-                <p>Intersolar、ESIE、IAA Mobility、汉堡风能展、尼日利亚新能源及电力展，提供光伏展出国参展报名、储能国际展览会组团参展全流程服务。</p>
-                <a href="energy.html" class="biz-link">查看新能源展会 <i class="fas fa-arrow-right"></i></a>
-            </div>
-            <div class="biz-card">
-                <div class="biz-icon"><i class="fas fa-bolt"></i></div>
-                <h3>电力/智能电网展会</h3>
-                <p>汉诺威工博会、中东电力展、欧洲电力展、美国POWERGEN，专业电力能源国际博览会展位申请与智能电网境外展览代理。</p>
-                <a href="power.html" class="biz-link">查看电力展会 <i class="fas fa-arrow-right"></i></a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="expo-section">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">热门推荐</span>
-            <h2 class="section-title">2026年重点国际展会</h2>
-            <p class="section-desc">专业展览公司提前锁定黄金展位，抢占市场先机</p>
-        </div>
-        <div class="card-grid">
-            <div class="card">
-                <div class="card-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80" class="card-img" alt="香港灯饰展">
-                    <span class="card-badge">照明</span>
-                </div>
-                <div class="card-body">
-                    <div class="card-meta"><span><i class="far fa-calendar"></i> 2026.10.27-30</span><span><i class="fas fa-map-marker-alt"></i> 香港</span></div>
-                    <h3 class="card-title">香港国际秋季灯饰展 2026</h3>
-                    <p class="card-text">亚洲规模最大灯饰展，35国2800+展商，名灯荟萃廊核心展位优先预订。</p>
-                    <div class="card-footer"><span class="card-price">¥38,000起</span><a href="expo-hk-lighting.html" class="btn-sm">立即报名 <i class="fas fa-arrow-right"></i></a></div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" class="card-img" alt="法兰克福照明展">
-                    <span class="card-badge">照明</span>
-                </div>
-                <div class="card-body">
-                    <div class="card-meta"><span><i class="far fa-calendar"></i> 2026.3.8-13</span><span><i class="fas fa-map-marker-alt"></i> 法兰克福</span></div>
-                    <h3 class="card-title">德国法兰克福照明展 2026</h3>
-                    <p class="card-text">全球照明第一展，250,000㎡，中国区总代理，核心展馆优先选位权。</p>
-                    <div class="card-footer"><span class="card-price">€5,500起</span><a href="expo-frankfurt-lighting.html" class="btn-sm">预订展位 <i class="fas fa-arrow-right"></i></a></div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80" class="card-img" alt="ESIE储能展">
-                    <span class="card-badge">新能源</span>
-                </div>
-                <div class="card-body">
-                    <div class="card-meta"><span><i class="far fa-calendar"></i> 2026.3.31-4.3</span><span><i class="fas fa-map-marker-alt"></i> 北京</span></div>
-                    <h3 class="card-title">储能国际峰会 ESIE 2026</h3>
-                    <p class="card-text">中国储能产业第一展，宁德时代、比亚迪储能齐聚，组团参展享15%优惠。</p>
-                    <div class="card-footer"><span class="card-price">¥22,000起</span><a href="expo-esie.html" class="btn-sm">组团参展 <i class="fas fa-arrow-right"></i></a></div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80" class="card-img" alt="汉诺威工博会">
-                    <span class="card-badge">电力</span>
-                </div>
-                <div class="card-body">
-                    <div class="card-meta"><span><i class="far fa-calendar"></i> 2026.3.30-4.3</span><span><i class="fas fa-map-marker-alt"></i> 汉诺威</span></div>
-                    <h3 class="card-title">汉诺威工业博览会 2026</h3>
-                    <p class="card-text">工业界奥林匹克，能源解决方案专区，电力设备企业开拓欧洲首选。</p>
-                    <div class="card-footer"><span class="card-price">€4,800起</span><a href="expo-hannover.html" class="btn-sm">展位申请 <i class="fas fa-arrow-right"></i></a></div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&q=80" class="card-img" alt="尼日利亚照明展">
-                    <span class="card-badge">照明</span>
-                </div>
-                <div class="card-body">
-                    <div class="card-meta"><span><i class="far fa-calendar"></i> 2026.7.15-17</span><span><i class="fas fa-map-marker-alt"></i> 拉各斯</span></div>
-                    <h3 class="card-title">尼日利亚国际照明展览会 2026</h3>
-                    <p class="card-text">西非照明第一展，2.2亿人口巨大市场，万盛展览中国区总代理。</p>
-                    <div class="card-footer"><span class="card-price">$3,800起</span><a href="expo-nigeria-lighting.html" class="btn-sm">立即报名 <i class="fas fa-arrow-right"></i></a></div>
-                </div>
-            </div>
-            <div class="card">
-                <div class="card-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80" class="card-img" alt="尼日利亚新能源电力展">
-                    <span class="card-badge">新能源</span>
-                </div>
-                <div class="card-body">
-                    <div class="card-meta"><span><i class="far fa-calendar"></i> 2026.7.15-17</span><span><i class="fas fa-map-marker-alt"></i> 拉各斯</span></div>
-                    <h3 class="card-title">尼日利亚新能源及电力产业博览会 2026</h3>
-                    <p class="card-text">非洲西部最大新能源电力展，NNEPIE中国区独家总代理，政府项目对接。</p>
-                    <div class="card-footer"><span class="card-price">$4,200起</span><a href="expo-nigeria-energy.html" class="btn-sm">预订展位 <i class="fas fa-arrow-right"></i></a></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="case-section">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">实力见证</span>
-            <h2 class="section-title">展览公司客户成功案例</h2>
-            <p class="section-desc">真实数据，真实成果，万盛展览助力中国企业闪耀全球</p>
-        </div>
-        <div class="case-grid-large">
-            <div class="case-card">
-                <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80" alt="照明企业案例">
-                <div class="case-overlay">
-                    <span class="case-tag">照明</span>
-                    <h3 class="case-title">中山照明企业：香港展揽获500万美元</h3>
-                    <div class="case-stats">$5M+ | 出口增长40%</div>
-                    <a href="case-detail-1.html" class="case-link">查看详情 <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-            <div class="case-card">
-                <img src="/images/ScreenShot_2026-05-14_184021_008.jpg" alt="储能企业案例">
-                <div class="case-overlay">
-                    <span class="case-tag">新能源</span>
-                    <h3 class="case-title">深圳储能公司：ESIE签约2800万</h3>
-                    <div class="case-stats">2800万 | 配对12场</div>
-                    <a href="case-detail-2.html" class="case-link">查看详情 <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-            <div class="case-card">
-                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80" alt="电力设备案例">
-                <div class="case-overlay">
-                    <span class="case-tag">电力</span>
-                    <h3 class="case-title">江苏电力企业：汉诺威打入欧洲</h3>
-                    <div class="case-stats">代理商3家 | 增长200%</div>
-                    <a href="case-detail-3.html" class="case-link">查看详情 <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-            <div class="case-card">
-                <img src="/images/led.jpg" alt="LED灯带案例">
-                <div class="case-overlay">
-                    <span class="case-tag">照明</span>
-                    <h3 class="case-title">佛山LED企业：获Home Depot供应商资格</h3>
-                    <div class="case-stats">$8M/年 | 美国家居零售</div>
-                    <a href="case-detail-4.html" class="case-link">查看详情 <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-            <div class="case-card">
-                <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=80" alt="光伏组件案例">
-                <div class="case-overlay">
-                    <span class="case-tag">新能源</span>
-                    <h3 class="case-title">宁波光伏企业：签下200MW分销协议</h3>
-                    <div class="case-stats">200MW | €1.2亿框架</div>
-                    <a href="case-detail-5.html" class="case-link">查看详情 <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-            <div class="case-card">
-                <img src="/images/lighting.jpg" alt="智能路灯案例">
-                <div class="case-overlay">
-                    <span class="case-tag">照明</span>
-                    <h3 class="case-title">东莞智能灯具：获沙特政府订单</h3>
-                    <div class="case-stats">$12M | 智慧城市项目</div>
-                    <a href="case-detail-6.html" class="case-link">查看详情 <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-            <div class="case-card">
-                <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=600&q=80" alt="充电桩案例">
-                <div class="case-overlay">
-                    <span class="case-tag">新能源</span>
-                    <h3 class="case-title">浙江充电桩企业：签约宝马供应链</h3>
-                    <div class="case-stats">宝马供应商 | €5000万/年</div>
-                    <a href="case-detail-7.html" class="case-link">查看详情 <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-            <div class="case-card">
-                <img src="/images/ScreenShot_2026-05-14_184443_174.jpg" alt="电缆企业案例">
-                <div class="case-overlay">
-                    <span class="case-tag">电力</span>
-                    <h3 class="case-title">上海电缆企业：签约沙特ACWA Power</h3>
-                    <div class="case-stats">NEOM项目 | $3000万</div>
-                    <a href="case-detail-8.html" class="case-link">查看详情 <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="seo-content-section">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">关于万盛展览</span>
-            <h2 class="section-title">为什么选择万盛展览公司？</h2>
-        </div>
-        <div class="seo-content-box">
-            <h2>展览公司行业领军者，20年专注海外展会组展</h2>
-            <p>万盛展览成立于2007年，是中国领先的<strong>展览公司</strong>之一，专注于为中国企业提供海外展览会组展服务。作为<strong>展览公司</strong>行业的标杆企业，我们拥有香港灯饰展、法兰克福照明展、汉诺威工博会、中东电力展、尼日利亚国际照明展览会、尼日利亚新能源及电力产业博览会等多个国际顶级展会的<strong>中国区总代理资质</strong>。</p>
-            <p>选择一家专业的<strong>展览公司</strong>是企业成功出海的关键。万盛展览不同于普通的中介机构，我们提供从<strong>展位申请、展台设计搭建、展品物流、签证代办、参展补贴申报到展后客户跟进</strong>的全链条服务。作为深耕行业20年的<strong>展览公司</strong>，我们深知每个展会的特点、每个国家的准入要求、每个买家的采购习惯。</p>
-            <p>截至2025年底，这家<strong>展览公司</strong>已累计服务超过<strong>10,000家中国企业</strong>，组织参加全球80多个国家和地区的500余场展览会，协助企业达成意向成交额累计超<strong>50亿美元</strong>。客户复购率高达78%，NPS评分82分，远超行业平均水平。</p>
-            <div style="margin-top:1.5rem;">
-                <span class="seo-keyword-tag">展览公司</span>
-                <span class="seo-keyword-tag">LED照明国外展会报名</span>
-                <span class="seo-keyword-tag">新能源海外展会展位申请</span>
-                <span class="seo-keyword-tag">电力能源国际博览会展位申请</span>
-                <span class="seo-keyword-tag">储能国际展览会组团参展</span>
-                <span class="seo-keyword-tag">智能电网境外展览代理</span>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="testi-section">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">客户评价</span>
-            <h2 class="section-title">他们选择了万盛展览公司</h2>
-        </div>
-        <div class="testi-grid">
-            <div class="testi-card">
-                <p class="testi-text">"万盛展览作为专业的展览公司，服务非常到位。从展位申请到补贴申报全程无忧。参展效果远超预期，香港展现场签下5个客户，我们会长期合作！"</p>
-                <div class="testi-author">
-                    <div class="testi-avatar">张</div>
-                    <div><div class="testi-name">张总</div><div class="testi-role">某照明科技公司 · 外贸总监</div></div>
-                </div>
-            </div>
-            <div class="testi-card">
-                <p class="testi-text">"储能展组团参展服务周到，现场翻译和洽谈协助让我们收获满满。万盛这家展览公司的商务配对非常精准，省去了盲目找客户的时间。"</p>
-                <div class="testi-author">
-                    <div class="testi-avatar">李</div>
-                    <div><div class="testi-name">李经理</div><div class="testi-role">某新能源企业 · 国际业务负责人</div></div>
-                </div>
-            </div>
-            <div class="testi-card">
-                <p class="testi-text">"第一次参加海外展会，万盛展览公司全方位指导，还帮我们申请到了参展补贴。汉诺威展后3个月就签了欧洲代理，太值了！"</p>
-                <div class="testi-author">
-                    <div class="testi-avatar">王</div>
-                    <div><div class="testi-name">王总</div><div class="testi-role">某电力设备公司 · 总经理</div></div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="seo-nav-section">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">服务导航</span>
-            <h2 class="section-title" style="font-size:1.5rem;">展览公司展会服务矩阵</h2>
-            <p class="section-desc">按行业分类的展会服务导航，帮助您快速找到所需服务</p>
-        </div>
-        <div class="seo-nav-grid">
-            <div class="seo-nav-card">
-                <div class="seo-nav-icon"><i class="fas fa-lightbulb"></i></div>
-                <h3>照明/灯饰展会服务</h3>
-                <ul class="seo-nav-links">
-                    <li><a href="lighting.html">LED照明国外展会报名</a></li>
-                    <li><a href="lighting.html">香港灯饰展参展报名服务</a></li>
-                    <li><a href="lighting.html">法兰克福照明展展位预订</a></li>
-                    <li><a href="lighting.html">美国国际照明展组团参展</a></li>
-                    <li><a href="lighting.html">迪拜照明展展位申请流程</a></li>
-                    <li><a href="expo-nigeria-lighting.html">尼日利亚国际照明展览会报名</a></li>
-                    <li><a href="lighting.html">智能照明出口参展代理</a></li>
-                    <li><a href="lighting.html">灯具企业境外展位预订</a></li>
-                </ul>
-            </div>
-            <div class="seo-nav-card">
-                <div class="seo-nav-icon"><i class="fas fa-solar-panel"></i></div>
-                <h3>新能源/储能展会服务</h3>
-                <ul class="seo-nav-links">
-                    <li><a href="energy.html">光伏展出国参展报名</a></li>
-                    <li><a href="energy.html">储能国际展览会组团参展</a></li>
-                    <li><a href="energy.html">电动汽车国外展会报名服务</a></li>
-                    <li><a href="energy.html">风能展境外展位预订</a></li>
-                    <li><a href="energy.html">充电桩国际展参展代理</a></li>
-                    <li><a href="expo-nigeria-energy.html">尼日利亚新能源及电力产业博览会</a></li>
-                    <li><a href="energy.html">氢能展出国展位申请</a></li>
-                    <li><a href="energy.html">新能源企业出口参展服务</a></li>
-                </ul>
-            </div>
-            <div class="seo-nav-card">
-                <div class="seo-nav-icon"><i class="fas fa-bolt"></i></div>
-                <h3>电力/智能电网展会服务</h3>
-                <ul class="seo-nav-links">
-                    <li><a href="power.html">电力能源国际博览会展位申请</a></li>
-                    <li><a href="power.html">输配电海外展会报名</a></li>
-                    <li><a href="power.html">智能电网境外展览代理</a></li>
-                    <li><a href="power.html">电力设备出国参展流程</a></li>
-                    <li><a href="power.html">电气展海外参展报名</a></li>
-                    <li><a href="power.html">电力自动化境外展览组团</a></li>
-                    <li><a href="power.html">直流电源海外展会参展服务</a></li>
-                    <li><a href="power.html">电力能源企业出口参展代理</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="cta-section">
-    <div class="container">
-        <div class="cta-grid">
-            <div>
-                <h2 class="cta-title">立即行动，抢占2026-2027黄金展位</h2>
-                <p class="cta-desc">全球顶级展会展位有限，提前12个月预订可锁定最优位置。专业展览公司顾问团队24小时内响应您的需求。</p>
-                <div class="cta-hotline">13420079909</div>
-                <div class="cta-info">
-                    <p><i class="fas fa-phone-alt"></i> 服务热线：400-006-2327</p>
-                    <p><i class="fab fa-weixin"></i> 微信：Xy13420079909</p>
-                    <p><i class="fas fa-envelope"></i> fair@ws-expo.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> 广东省中山市火炬区国际会展中心服务楼2楼</p>
-                </div>
-            </div>
-            <div class="form-card">
-                <h3 style="color:white; margin-bottom:1.5rem; font-weight:700;">免费获取参展方案</h3>
-                <form action="https://formsubmit.co/winvs@qq.com" method="POST">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="【展览公司官网】新咨询">
-                    <div class="form-group"><input type="text" name="name" class="form-control" placeholder="您的姓名" required></div>
-                    <div class="form-group"><input type="text" name="company" class="form-control" placeholder="公司名称"></div>
-                    <div class="form-group"><input type="tel" name="phone" class="form-control" placeholder="联系电话" required></div>
-                    <div class="form-group">
-                        <select name="interest" class="form-control">
-                            <option value="">感兴趣的展会类型</option>
-                            <option value="照明">照明/灯饰展会</option>
-                            <option value="新能源">新能源/储能展会</option>
-                            <option value="电力">电力/智能电网展会</option>
-                        </select>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <div class="hero-badge"><i class="fas fa-award"></i> 中国海外组展十强单位 · 专业展览公司20年</div>
+                    <h1>展览公司 · 全球展会组展专家<br><span class="gradient-text">万盛展览</span> 助您闪耀世界舞台</h1>
+                    <p class="hero-desc">万盛展览是行业领先的<strong>展览公司</strong>，专注LED照明、新能源、电力能源三大领域，提供展位申请、展台搭建、展品物流、签证代办、补贴申报等一站式出海服务。作为香港灯饰展、法兰克福照明展、汉诺威工博会等多个顶级展会的中国区总代理，我们已助力10000+企业成功出海。</p>
+                    <div class="hero-cta">
+                        <a href="services.html" class="btn-gold"><i class="fas fa-rocket"></i> 立即咨询展位</a>
+                        <a href="tel:13420079909" class="btn-outline-light"><i class="fas fa-phone-alt"></i> 13420079909</a>
                     </div>
-                    <button type="submit" class="btn-submit">提交咨询，展览公司顾问24小时内回电</button>
-                </form>
+                    <div class="hero-stats">
+                        <div><span class="hero-stat-num" data-count="20">0</span><div class="hero-stat-label">年展览公司经验</div></div>
+                        <div><span class="hero-stat-num" data-count="80">0</span><div class="hero-stat-label">覆盖国家地区</div></div>
+                        <div><span class="hero-stat-num" data-count="500">0</span><div class="hero-stat-label">组展展会场次</div></div>
+                        <div><span class="hero-stat-num" data-count="10000">0</span><div class="hero-stat-label">服务企业数量</div></div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <img src="/images/vanson.jpg" alt="万盛展览-专业展览公司-海外展会现场">
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section class="trust-bar">
+        <div class="container">
+            <div class="trust-grid">
+                <div class="trust-item"><div class="trust-num">500+</div><div class="trust-label">场/年组展规模</div></div>
+                <div class="trust-item"><div class="trust-num">50亿美元</div><div class="trust-label">累计促成订单</div></div>
+                <div class="trust-item"><div class="trust-num">99%</div><div class="trust-label">签证出签率</div></div>
+                <div class="trust-item"><div class="trust-num">78%</div><div class="trust-label">客户复购率</div></div>
+                <div class="trust-item"><div class="trust-num">70%</div><div class="trust-label">最高补贴比例</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="biz-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">核心业务</span>
+                <h2 class="section-title">展览公司全产业链服务覆盖</h2>
+                <p class="section-desc">无论您是照明灯饰、新能源储能，还是电力设备企业，万盛展览作为专业展览公司都能为您匹配全球最适合的展会</p>
+            </div>
+            <div class="biz-grid">
+                <div class="biz-card">
+                    <div class="biz-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>照明/灯饰展会</h3>
+                    <p>香港灯饰展、法兰克福照明展、美国LFI、迪拜照明展、尼日利亚照明展官方代理，提供LED照明国外展会报名、灯饰行业出国参展申请等一站式服务。</p>
+                    <a href="lighting.html" class="biz-link">查看照明展会 <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="biz-card">
+                    <div class="biz-icon"><i class="fas fa-solar-panel"></i></div>
+                    <h3>新能源/储能展会</h3>
+                    <p>Intersolar、ESIE、IAA Mobility、汉堡风能展、尼日利亚新能源及电力展，提供光伏展出国参展报名、储能国际展览会组团参展全流程服务。</p>
+                    <a href="energy.html" class="biz-link">查看新能源展会 <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="biz-card">
+                    <div class="biz-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>电力/智能电网展会</h3>
+                    <p>汉诺威工博会、中东电力展、欧洲电力展、美国POWERGEN，专业电力能源国际博览会展位申请与智能电网境外展览代理。</p>
+                    <a href="power.html" class="biz-link">查看电力展会 <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="expo-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">热门推荐</span>
+                <h2 class="section-title">2026年重点国际展会</h2>
+                <p class="section-desc">专业展览公司提前锁定黄金展位，抢占市场先机</p>
+            </div>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=80" class="card-img" alt="香港灯饰展">
+                        <span class="card-badge">照明</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta"><span><i class="far fa-calendar"></i> 2026.10.27-30</span><span><i class="fas fa-map-marker-alt"></i> 香港</span></div>
+                        <h3 class="card-title">香港国际秋季灯饰展 2026</h3>
+                        <p class="card-text">亚洲规模最大灯饰展，35国2800+展商，名灯荟萃廊核心展位优先预订。</p>
+                        <div class="card-footer"><span class="card-price">¥38,000起</span><a href="expo-hk-lighting.html" class="btn-sm">立即报名 <i class="fas fa-arrow-right"></i></a></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80" class="card-img" alt="法兰克福照明展">
+                        <span class="card-badge">照明</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta"><span><i class="far fa-calendar"></i> 2026.3.8-13</span><span><i class="fas fa-map-marker-alt"></i> 法兰克福</span></div>
+                        <h3 class="card-title">德国法兰克福照明展 2026</h3>
+                        <p class="card-text">全球照明第一展，250,000㎡，中国区总代理，核心展馆优先选位权。</p>
+                        <div class="card-footer"><span class="card-price">€5,500起</span><a href="expo-frankfurt-lighting.html" class="btn-sm">预订展位 <i class="fas fa-arrow-right"></i></a></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&q=80" class="card-img" alt="ESIE储能展">
+                        <span class="card-badge">新能源</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta"><span><i class="far fa-calendar"></i> 2026.3.31-4.3</span><span><i class="fas fa-map-marker-alt"></i> 北京</span></div>
+                        <h3 class="card-title">储能国际峰会 ESIE 2026</h3>
+                        <p class="card-text">中国储能产业第一展，宁德时代、比亚迪储能齐聚，组团参展享15%优惠。</p>
+                        <div class="card-footer"><span class="card-price">¥22,000起</span><a href="expo-esie.html" class="btn-sm">组团参展 <i class="fas fa-arrow-right"></i></a></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80" class="card-img" alt="汉诺威工博会">
+                        <span class="card-badge">电力</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta"><span><i class="far fa-calendar"></i> 2026.3.30-4.3</span><span><i class="fas fa-map-marker-alt"></i> 汉诺威</span></div>
+                        <h3 class="card-title">汉诺威工业博览会 2026</h3>
+                        <p class="card-text">工业界奥林匹克，能源解决方案专区，电力设备企业开拓欧洲首选。</p>
+                        <div class="card-footer"><span class="card-price">€4,800起</span><a href="expo-hannover.html" class="btn-sm">展位申请 <i class="fas fa-arrow-right"></i></a></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1524661135-423995f22d0b?w=600&q=80" class="card-img" alt="尼日利亚照明展">
+                        <span class="card-badge">照明</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta"><span><i class="far fa-calendar"></i> 2026.7.15-17</span><span><i class="fas fa-map-marker-alt"></i> 拉各斯</span></div>
+                        <h3 class="card-title">尼日利亚国际照明展览会 2026</h3>
+                        <p class="card-text">西非照明第一展，2.2亿人口巨大市场，万盛展览中国区总代理。</p>
+                        <div class="card-footer"><span class="card-price">$3,800起</span><a href="expo-nigeria-lighting.html" class="btn-sm">立即报名 <i class="fas fa-arrow-right"></i></a></div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&q=80" class="card-img" alt="尼日利亚新能源电力展">
+                        <span class="card-badge">新能源</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="card-meta"><span><i class="far fa-calendar"></i> 2026.7.15-17</span><span><i class="fas fa-map-marker-alt"></i> 拉各斯</span></div>
+                        <h3 class="card-title">尼日利亚新能源及电力产业博览会 2026</h3>
+                        <p class="card-text">非洲西部最大新能源电力展，NNEPIE中国区独家总代理，政府项目对接。</p>
+                        <div class="card-footer"><span class="card-price">$4,200起</span><a href="expo-nigeria-energy.html" class="btn-sm">预订展位 <i class="fas fa-arrow-right"></i></a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="case-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">实力见证</span>
+                <h2 class="section-title">展览公司客户成功案例</h2>
+                <p class="section-desc">真实数据，真实成果，万盛展览助力中国企业闪耀全球</p>
+            </div>
+            <div class="case-grid-large">
+                <div class="case-card">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&q=80" alt="照明企业案例">
+                    <div class="case-overlay">
+                        <span class="case-tag">照明</span>
+                        <h3 class="case-title">中山照明企业：香港展揽获500万美元</h3>
+                        <div class="case-stats">$5M+ | 出口增长40%</div>
+                        <a href="case-detail-1.html" class="case-link">查看详情 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <img src="/images/ScreenShot_2026-05-14_184021_008.jpg" alt="储能企业案例">
+                    <div class="case-overlay">
+                        <span class="case-tag">新能源</span>
+                        <h3 class="case-title">深圳储能公司：ESIE签约2800万</h3>
+                        <div class="case-stats">2800万 | 配对12场</div>
+                        <a href="case-detail-2.html" class="case-link">查看详情 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80" alt="电力设备案例">
+                    <div class="case-overlay">
+                        <span class="case-tag">电力</span>
+                        <h3 class="case-title">江苏电力企业：汉诺威打入欧洲</h3>
+                        <div class="case-stats">代理商3家 | 增长200%</div>
+                        <a href="case-detail-3.html" class="case-link">查看详情 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <img src="/images/led.jpg" alt="LED灯带案例">
+                    <div class="case-overlay">
+                        <span class="case-tag">照明</span>
+                        <h3 class="case-title">佛山LED企业：获Home Depot供应商资格</h3>
+                        <div class="case-stats">$8M/年 | 美国家居零售</div>
+                        <a href="case-detail-4.html" class="case-link">查看详情 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=600&q=80" alt="光伏组件案例">
+                    <div class="case-overlay">
+                        <span class="case-tag">新能源</span>
+                        <h3 class="case-title">宁波光伏企业：签下200MW分销协议</h3>
+                        <div class="case-stats">200MW | €1.2亿框架</div>
+                        <a href="case-detail-5.html" class="case-link">查看详情 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <img src="/images/lighting.jpg" alt="智能路灯案例">
+                    <div class="case-overlay">
+                        <span class="case-tag">照明</span>
+                        <h3 class="case-title">东莞智能灯具：获沙特政府订单</h3>
+                        <div class="case-stats">$12M | 智慧城市项目</div>
+                        <a href="case-detail-6.html" class="case-link">查看详情 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <img src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?w=600&q=80" alt="充电桩案例">
+                    <div class="case-overlay">
+                        <span class="case-tag">新能源</span>
+                        <h3 class="case-title">浙江充电桩企业：签约宝马供应链</h3>
+                        <div class="case-stats">宝马供应商 | €5000万/年</div>
+                        <a href="case-detail-7.html" class="case-link">查看详情 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <img src="/images/ScreenShot_2026-05-14_184443_174.jpg" alt="电缆企业案例">
+                    <div class="case-overlay">
+                        <span class="case-tag">电力</span>
+                        <h3 class="case-title">上海电缆企业：签约沙特ACWA Power</h3>
+                        <div class="case-stats">NEOM项目 | $3000万</div>
+                        <a href="case-detail-8.html" class="case-link">查看详情 <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="seo-content-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">关于万盛展览</span>
+                <h2 class="section-title">为什么选择万盛展览公司？</h2>
+            </div>
+            <div class="seo-content-box">
+                <h2>展览公司行业领军者，20年专注海外展会组展</h2>
+                <p>万盛展览成立于2007年，是中国领先的<strong>展览公司</strong>之一，专注于为中国企业提供海外展览会组展服务。作为<strong>展览公司</strong>行业的标杆企业，我们拥有香港灯饰展、法兰克福照明展、汉诺威工博会、中东电力展、尼日利亚国际照明展览会、尼日利亚新能源及电力产业博览会等多个国际顶级展会的<strong>中国区总代理资质</strong>。</p>
+                <p>选择一家专业的<strong>展览公司</strong>是企业成功出海的关键。万盛展览不同于普通的中介机构，我们提供从<strong>展位申请、展台设计搭建、展品物流、签证代办、参展补贴申报到展后客户跟进</strong>的全链条服务。作为深耕行业20年的<strong>展览公司</strong>，我们深知每个展会的特点、每个国家的准入要求、每个买家的采购习惯。</p>
+                <p>截至2025年底，这家<strong>展览公司</strong>已累计服务超过<strong>10,000家中国企业</strong>，组织参加全球80多个国家和地区的500余场展览会，协助企业达成意向成交额累计超<strong>50亿美元</strong>。客户复购率高达78%，NPS评分82分，远超行业平均水平。</p>
+                <div style="margin-top:1.5rem;">
+                    <span class="seo-keyword-tag">展览公司</span>
+                    <span class="seo-keyword-tag">LED照明国外展会报名</span>
+                    <span class="seo-keyword-tag">新能源海外展会展位申请</span>
+                    <span class="seo-keyword-tag">电力能源国际博览会展位申请</span>
+                    <span class="seo-keyword-tag">储能国际展览会组团参展</span>
+                    <span class="seo-keyword-tag">智能电网境外展览代理</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testi-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">客户评价</span>
+                <h2 class="section-title">他们选择了万盛展览公司</h2>
+            </div>
+            <div class="testi-grid">
+                <div class="testi-card">
+                    <p class="testi-text">"万盛展览作为专业的展览公司，服务非常到位。从展位申请到补贴申报全程无忧。参展效果远超预期，香港展现场签下5个客户，我们会长期合作！"</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">张</div>
+                        <div><div class="testi-name">张总</div><div class="testi-role">某照明科技公司 · 外贸总监</div></div>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <p class="testi-text">"储能展组团参展服务周到，现场翻译和洽谈协助让我们收获满满。万盛这家展览公司的商务配对非常精准，省去了盲目找客户的时间。"</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">李</div>
+                        <div><div class="testi-name">李经理</div><div class="testi-role">某新能源企业 · 国际业务负责人</div></div>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <p class="testi-text">"第一次参加海外展会，万盛展览公司全方位指导，还帮我们申请到了参展补贴。汉诺威展后3个月就签了欧洲代理，太值了！"</p>
+                    <div class="testi-author">
+                        <div class="testi-avatar">王</div>
+                        <div><div class="testi-name">王总</div><div class="testi-role">某电力设备公司 · 总经理</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="seo-nav-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">服务导航</span>
+                <h2 class="section-title" style="font-size:1.5rem;">展览公司展会服务矩阵</h2>
+                <p class="section-desc">按行业分类的展会服务导航，帮助您快速找到所需服务</p>
+            </div>
+            <div class="seo-nav-grid">
+                <div class="seo-nav-card">
+                    <div class="seo-nav-icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>照明/灯饰展会服务</h3>
+                    <ul class="seo-nav-links">
+                        <li><a href="lighting.html">LED照明国外展会报名</a></li>
+                        <li><a href="lighting.html">香港灯饰展参展报名服务</a></li>
+                        <li><a href="lighting.html">法兰克福照明展展位预订</a></li>
+                        <li><a href="lighting.html">美国国际照明展组团参展</a></li>
+                        <li><a href="lighting.html">迪拜照明展展位申请流程</a></li>
+                        <li><a href="expo-nigeria-lighting.html">尼日利亚国际照明展览会报名</a></li>
+                        <li><a href="lighting.html">智能照明出口参展代理</a></li>
+                        <li><a href="lighting.html">灯具企业境外展位预订</a></li>
+                    </ul>
+                </div>
+                <div class="seo-nav-card">
+                    <div class="seo-nav-icon"><i class="fas fa-solar-panel"></i></div>
+                    <h3>新能源/储能展会服务</h3>
+                    <ul class="seo-nav-links">
+                        <li><a href="energy.html">光伏展出国参展报名</a></li>
+                        <li><a href="energy.html">储能国际展览会组团参展</a></li>
+                        <li><a href="energy.html">电动汽车国外展会报名服务</a></li>
+                        <li><a href="energy.html">风能展境外展位预订</a></li>
+                        <li><a href="energy.html">充电桩国际展参展代理</a></li>
+                        <li><a href="expo-nigeria-energy.html">尼日利亚新能源及电力产业博览会</a></li>
+                        <li><a href="energy.html">氢能展出国展位申请</a></li>
+                        <li><a href="energy.html">新能源企业出口参展服务</a></li>
+                    </ul>
+                </div>
+                <div class="seo-nav-card">
+                    <div class="seo-nav-icon"><i class="fas fa-bolt"></i></div>
+                    <h3>电力/智能电网展会服务</h3>
+                    <ul class="seo-nav-links">
+                        <li><a href="power.html">电力能源国际博览会展位申请</a></li>
+                        <li><a href="power.html">输配电海外展会报名</a></li>
+                        <li><a href="power.html">智能电网境外展览代理</a></li>
+                        <li><a href="power.html">电力设备出国参展流程</a></li>
+                        <li><a href="power.html">电气展海外参展报名</a></li>
+                        <li><a href="power.html">电力自动化境外展览组团</a></li>
+                        <li><a href="power.html">直流电源海外展会参展服务</a></li>
+                        <li><a href="power.html">电力能源企业出口参展代理</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-grid">
+                <div>
+                    <h2 class="cta-title">立即行动，抢占2026-2027黄金展位</h2>
+                    <p class="cta-desc">全球顶级展会展位有限，提前12个月预订可锁定最优位置。专业展览公司顾问团队24小时内响应您的需求。</p>
+                    <div class="cta-hotline">13420079909</div>
+                    <div class="cta-info">
+                        <p><i class="fas fa-phone-alt"></i> 服务热线：400-006-2327</p>
+                        <p><i class="fab fa-weixin"></i> 微信：Xy13420079909</p>
+                        <p><i class="fas fa-envelope"></i> fair@ws-expo.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 广东省中山市火炬区国际会展中心服务楼2楼</p>
+                    </div>
+                </div>
+                <div class="form-card">
+                    <h3 style="color:white; margin-bottom:1.5rem; font-weight:700;">免费获取参展方案</h3>
+                    <form action="https://formsubmit.co/winvs@qq.com" method="POST">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_subject" value="【展览公司官网】新咨询">
+                        <div class="form-group"><input type="text" name="name" class="form-control" placeholder="您的姓名" required></div>
+                        <div class="form-group"><input type="text" name="company" class="form-control" placeholder="公司名称"></div>
+                        <div class="form-group"><input type="tel" name="phone" class="form-control" placeholder="联系电话" required></div>
+                        <div class="form-group">
+                            <select name="interest" class="form-control">
+                                <option value="">感兴趣的展会类型</option>
+                                <option value="照明">照明/灯饰展会</option>
+                                <option value="新能源">新能源/储能展会</option>
+                                <option value="电力">电力/智能电网展会</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-submit">提交咨询，展览公司顾问24小时内回电</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 </main>
 
 <footer class="footer">
@@ -477,9 +563,9 @@
             <div>
                 <h4 class="footer-title">合作伙伴</h4>
                 <ul class="footer-links"><li><a href="https://www.ws-expo.com" target="_blank" rel="noopener noreferrer">国际展会</a></li>
-<li><a href="https://nnepie.ws-expo.com" target="_blank" rel="noopener noreferrer">尼日利亚能源展</a></li>
-<li><a href="https://nnepie.ws-expo.com" target="_blank" rel="noopener noreferrer">尼日利亚电力展</a></li>
-<li><a href="https://www.nnepie.com" target="_blank" rel="noopener noreferrer">NNEPIE</a></li></ul>
+                    <li><a href="https://nnepie.ws-expo.com" target="_blank" rel="noopener noreferrer">尼日利亚能源展</a></li>
+                    <li><a href="https://nnepie.ws-expo.com" target="_blank" rel="noopener noreferrer">尼日利亚电力展</a></li>
+                    <li><a href="https://www.nnepie.com" target="_blank" rel="noopener noreferrer">NNEPIE</a></li></ul>
             </div>
             <div>
                 <h4 class="footer-title">联系我们</h4>
@@ -494,7 +580,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 万盛展览 | 粤ICP备15075690号-1 | 海外展会组展服务领军品牌 | 专注LED照明·新能源·电力能源三大领域</p>
+            <p>&copy; 2026 万盛展览 | 粤ICP备15075690号-1 | 海外展会组展服务领军品牌 | 专注LED照明·新能源·电力能源领域的国际<a href="https://fair.ws-expo.com">展览公司</a></p>
         </div>
     </div>
 </footer>
