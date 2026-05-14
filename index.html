@@ -516,12 +516,29 @@
                 </div>
                 <div class="form-card">
                     <h3 style="color:white; margin-bottom:1.5rem; font-weight:700;">免费获取参展方案</h3>
-                    <form action="https://formsubmit.co/83fa7fa25fbb69de40e88bda227ec0b0" method="POST">
-                        <input type="hidden" name="_captcha" value="false">
-                        <input type="hidden" name="_subject" value="【展览公司官网】新咨询">
-                        <div class="form-group"><input type="text" name="name" class="form-control" placeholder="您的姓名" required></div>
-                        <div class="form-group"><input type="text" name="company" class="form-control" placeholder="公司名称"></div>
-                        <div class="form-group"><input type="tel" name="phone" class="form-control" placeholder="联系电话" required></div>
+                    <!-- Web3Forms 表单开始 -->
+                    <form action="https://api.web3forms.com/submit" method="POST">
+                        <!-- 你的 Access Key -->
+                        <input type="hidden" name="access_key" value="380afd22-ff71-48f0-9935-c7956d15dae1">
+                        
+                        <!-- 可选：自定义邮件标题 -->
+                        <input type="hidden" name="subject" value="【展览公司官网】新咨询">
+                        
+                        <!-- 可选：提交后跳转的感谢页面（你可以自己做一个 thanks.html） -->
+                        <!-- <input type="hidden" name="redirect" value="https://fair.ws-expo.com/thanks.html"> -->
+                        
+                        <!-- 蜜罐垃圾信息防护（对人不可见，机器人会误填） -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;" tabindex="-1" autocomplete="off">
+
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control" placeholder="您的姓名" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="company" class="form-control" placeholder="公司名称">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" class="form-control" placeholder="联系电话" required>
+                        </div>
                         <div class="form-group">
                             <select name="interest" class="form-control">
                                 <option value="">感兴趣的展会类型</option>
@@ -532,6 +549,7 @@
                         </div>
                         <button type="submit" class="btn-submit">提交咨询，展览公司顾问24小时内回电</button>
                     </form>
+                    <!-- Web3Forms 表单结束 -->
                 </div>
             </div>
         </div>
