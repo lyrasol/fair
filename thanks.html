@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>提交成功 - 感谢咨询 | 万盛展览</title>
-    <meta name="description" content="您的参展咨询已成功提交，万盛展览顾问将在24小时内回电。业务热线：13420079909">
+    <!-- 优化标题，包含核心长尾词 -->
+    <title>提交成功 - 国际展会参展报名、海外展会申请、展位预订方案 | 万盛展览</title>
+    <!-- 增强描述，覆盖用户可能搜索的短语 -->
+    <meta name="description" content="您的国际展会参展报名已成功提交。万盛展览专业顾问将在24小时内提供照明、新能源、电力等海外展会申请及展位预订专属方案。咨询热线：13420079909。">
+    <!-- 允许索引，允许跟踪链接 -->
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://fair.ws-expo.com/thanks.html" />
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="提交成功 - 国际展会参展报名、海外展会申请、展位预订方案 | 万盛展览">
+    <meta property="og:description" content="您的国际展会参展报名已成功提交，专业顾问24小时内联系，提供海外展会申请及展位预订方案。">
+    <meta property="og:url" content="https://fair.ws-expo.com/thanks.html">
+    <meta property="og:site_name" content="万盛展览">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="提交成功 - 国际展会参展报名、海外展会申请、展位预订方案 | 万盛展览">
+    <meta name="twitter:description" content="您的国际展会参展报名已成功提交，专业顾问24小时内联系。">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="static/css/style.css">
@@ -20,7 +31,7 @@
             justify-content: center;
         }
         .thanks-card {
-            max-width: 600px;
+            max-width: 700px;
             margin: 2rem;
             background: #ffffff;
             border-radius: 1.5rem;
@@ -37,11 +48,15 @@
             font-weight: 700;
             color: var(--primary, #0d6efd);
             margin-bottom: 1rem;
+            font-size: 1.8rem;
         }
         .thanks-text {
             color: #6c757d;
             font-size: 1.1rem;
             line-height: 1.8;
+            text-align: left;
+            max-width: 550px;
+            margin: 0 auto;
         }
         .hotline-box {
             background: #f0f9ff;
@@ -99,22 +114,58 @@
             color: #198754;
             font-weight: 600;
         }
+        /* 新增：展会引导卡片，丰富页面内容 */
+        .expo-guide {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+        .expo-guide-item {
+            flex: 1 1 200px;
+            background: #f8f9fa;
+            border-radius: 0.8rem;
+            padding: 1.2rem;
+            transition: transform 0.2s;
+        }
+        .expo-guide-item:hover {
+            transform: translateY(-3px);
+        }
+        .expo-guide-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary, #0d6efd);
+        }
+        .expo-guide-item p {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 0.5rem;
+        }
+        .expo-guide-item a {
+            font-weight: 600;
+            color: #0d6efd;
+            text-decoration: none;
+        }
+        .expo-guide-item a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
-    <div class="thanks-card">
+    <main class="thanks-card">
         <div class="success-icon">
             <i class="fas fa-check-circle"></i>
         </div>
-        <h1 class="thanks-title">提交成功！感谢您的咨询</h1>
-        <p class="thanks-text">
-            您的<strong>国际展会参展报名</strong>信息已成功发送，<br>
-            我们的专业顾问将在 <strong>24小时内</strong> 通过电话或微信与您联系，<br>
-            为您提供专属的海外展会申请及展位预订方案。
-        </p>
+        <h1 class="thanks-title">提交成功！感谢您的国际展会参展报名</h1>
+        <div class="thanks-text">
+            <p>您的<strong>海外展会申请</strong>信息已成功发送至万盛展览（专业展览公司，20年组展经验）。</p>
+            <p>我们的顾问将在 <strong>24小时内</strong> 通过电话或微信与您取得联系，并根据您的产品类型和预算，提供<strong>LED照明、新能源、电力能源</strong>等领域的<strong>展位预订方案</strong>及参展全流程指导。</p>
+            <p>如需更快响应，欢迎直接拨打下方热线或添加微信，顾问可立即为您查询目标展会的剩余展位情况。</p>
+        </div>
         
         <div class="hotline-box">
-            <p style="margin-bottom:0.5rem; color:#6c757d;">如需紧急沟通，可直接拨打</p>
+            <p style="margin-bottom:0.5rem; color:#6c757d;">7×24小时应急热线</p>
             <div class="hotline-num">
                 <i class="fas fa-phone-alt"></i> 13420079909
             </div>
@@ -125,11 +176,31 @@
 
         <div>
             <a href="/" class="btn-back"><i class="fas fa-home me-2"></i>返回首页</a>
-            <a href="lighting.html" class="btn-outline-back"><i class="fas fa-lightbulb me-2"></i>查看照明展会</a>
+            <a href="contact.html" class="btn-outline-back"><i class="fas fa-edit me-2"></i>再次提交</a>
         </div>
-        <p style="margin-top:1.5rem; font-size:0.9rem; color:#adb5bd;">
-            如需再次提交新的展会需求，可 <a href="contact.html" style="color:#0d6efd;">返回联系我们</a> 页面。
+
+        <div class="expo-guide">
+            <div class="expo-guide-item">
+                <h4><i class="fas fa-lightbulb"></i> 照明展会</h4>
+                <p>香港灯饰展、法兰克福照明展、美国LFI等展位申请。</p>
+                <a href="lighting.html">查看照明展会 <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="expo-guide-item">
+                <h4><i class="fas fa-solar-panel"></i> 新能源展会</h4>
+                <p>Intersolar、ESIE储能展、尼日利亚新能源展等报名。</p>
+                <a href="energy.html">查看新能源展会 <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="expo-guide-item">
+                <h4><i class="fas fa-bolt"></i> 电力展会</h4>
+                <p>汉诺威工博会、中东电力展、美国POWERGEN等预订。</p>
+                <a href="power.html">查看电力展会 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+
+        <p style="margin-top:1.8rem; font-size:0.9rem; color:#adb5bd;">
+            更多成功案例与参展攻略，请访问 <a href="blog.html">资讯中心</a> 或 <a href="cases.html">成功案例</a>。
         </p>
-    </div>
+    </main>
+	<script language="javascript" type="text/javascript" src="https://www.ws-expo.com/js/data.js"></script>
 </body>
 </html>
